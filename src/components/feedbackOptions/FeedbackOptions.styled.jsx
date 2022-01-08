@@ -15,7 +15,6 @@ export const FeedbackItem = styled.li`
 `;
 
 const getBgColor = ({ name, theme }) => {
-  console.log(theme);
   switch (name) {
     case 'good':
       return theme.colors.green;
@@ -29,13 +28,17 @@ const getBgColor = ({ name, theme }) => {
 };
 
 export const Button = styled.button`
-  display: flex;
-  justify-content: center;
-  align-items: center;
   padding: 5px;
   width: 85px;
-  border-radius: 5px;
-  border: 1px solid gray;
+  height: 40px;
+  border-radius: 20px;
+  border: 0;
   text-transform: capitalize;
   background-color: ${getBgColor};
+  cursor: pointer;
+  transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+  :focus,
+  :hover {
+    color: #ffffff;
+  }
 `;
