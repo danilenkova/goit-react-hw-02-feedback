@@ -1,4 +1,4 @@
-import styled from "styled-components";
+import styled from 'styled-components';
 
 export const Feedback = styled.ul`
   display: flex;
@@ -14,16 +14,17 @@ export const FeedbackItem = styled.li`
   }
 `;
 
-const getBgColor = (props) => {
-  switch (props.name) {
-    case "good":
-      return "var(--color-green)";
-    case "neutral":
-      return "var(--color-yellow)";
-    case "bad":
-      return "var(--color-red)";
+const getBgColor = ({ name, theme }) => {
+  console.log(theme);
+  switch (name) {
+    case 'good':
+      return theme.colors.green;
+    case 'neutral':
+      return theme.colors.yellow;
+    case 'bad':
+      return theme.colors.red;
     default:
-      return "var(--color-white)";
+      return theme.colors.white;
   }
 };
 
